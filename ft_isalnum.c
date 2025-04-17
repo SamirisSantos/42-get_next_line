@@ -23,8 +23,8 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-/*int main()
+/*
+int main()
 {
 	char c;
 	c = '2';
@@ -46,3 +46,5 @@ int	ft_isalnum(int c)
 
     return 0;
 }*/
+
+

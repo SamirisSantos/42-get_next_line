@@ -13,7 +13,53 @@
 #include <stdio.h>
 #include <string.h>
 
-int ft_strcmp(const char *s1, const char *s2)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+    size_t	i;
 
+	i = 0;
+	if (n <= 0)
+	{
+		return (0);
+	}
+	while ((i < n) && (s1[i] == s2[i]))
+	{
+		if (s1[i] == '\0' || s2[i] == '\0')
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	if (i == n)
+	{
+		return (0);
+	}
+	return (s1[i] - s2[i]);
+}
+
+int main()
+{
+    char    st1[] = "Pisciner 42";
+    char    st2[] = "Pisciner";
+	unsigned int n;
+	int	result;
+
+	n = 4;
+        result = ft_strncmp(st1,st2,n);
+        printf("Result My funcion 1:%d \n", result);
+	result = strncmp(st1,st2,n);
+        printf("Result C 1:%d \n", result);
+	
+        printf("--------------------- \n");
+
+	n = 8;
+	result = ft_strncmp(st1,st2,n);
+        printf("Result My funcion 2:%d \n", result);
+        result = strncmp(st1,st2,n);
+        printf("Result C 2:%d \n", result);
+
+	printf("--------------------- \n");
+
+	result = ft_strncmp(st1,st2, 9);
+        printf("Result My funcion 2:%d \n", result);
+        result = strncmp(st1,st2,9);
+        printf("Result C 2:%d \n", result);
 }
