@@ -13,14 +13,29 @@
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memset(void *s, int c, int n)
+void	*ft_memset(char *s, int c, size_t n)
 {
-
-
+    size_t  i;
+    char    *str;
+    
+    i = 0;
+    str = s;
+    while (i < n)
+    {
+        str[i] = c;
+        i++;
+    }
+    return(s);
 }
 
 int main()
 {
+    char dest[50];
+    char ch = 'b';
+    ft_memset(dest, ch, 20);
 
-
+    printf("After ft_memset():  %s \n", dest);
+    
+    memset(dest, ch, 20);
+    printf("After memset():  %s \n", dest);
 }
