@@ -35,10 +35,10 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (s1[i] - s2[i]);
 }
 
-int main()
+/*int main()
 {
     char    st1[] = "Pisciner 42";
-    char    st2[] = "Pisciner";
+    char    st2[] = "pisciner";
 	unsigned int n;
 	int	result;
 
@@ -62,4 +62,4 @@ int main()
         printf("Result My funcion 2:%d \n", result);
         result = strncmp(st1,st2,9);
         printf("Result C 2:%d \n", result);
-}
+}*/
