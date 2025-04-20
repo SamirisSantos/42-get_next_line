@@ -35,9 +35,9 @@ char	*ft_strchr(const char *s, int c)
 }
 /*int main()
 {
-    char myStr[] = "Hello World outra coisa";
-    char *myPtr = ft_strchr(myStr, 'd');
+    char str[] = "Hello World outra coisa";
+    char *s = ft_strchr(str, 'd');
     
-    printf("%s", myPtr);
+    printf("%s", s);
 
 }*/

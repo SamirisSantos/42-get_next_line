@@ -56,10 +56,10 @@ char *ft_strrchr(const char *s, int c)
 }
 int main()
 {
-    char myStr[] = "Hello World";
-    char *myPtr = ft_strrchr(myStr, 'l');
+    char str[] = "Hello World";
+    char *s = ft_strrchr(str, 'l');
 
-    printf("%s \n", myPtr);
-    printf("%s \n", strrchr(myStr, 'l'));
+    printf("%s \n", s);
+    printf("%s \n", strrchr(str, 'l'));
 
 }*/

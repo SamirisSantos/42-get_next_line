@@ -27,7 +27,7 @@ void	*ft_memset(char *s, int c, size_t n)
     }
     return(s);
 }
-
+/*
 int main()
 {
     char dest[50];
@@ -38,4 +38,4 @@ int main()
     
     memset(dest, ch, 20);
     printf("After memset():  %s \n", dest);
-}
+}*/

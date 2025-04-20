@@ -18,8 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t len;
 	size_t j;
 	
-	len = 0; // size original string
-	j = 0; // size copy string
+	len = 0; 
+	j = 0; 
 	while (src[len] != '\0')
 	{
 		len++;
