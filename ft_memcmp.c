@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 16:24:36 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/21 11:29:29 by sade-ara         ###   ########.fr       */
+/*   Created: 2025/04/21 11:02:51 by sade-ara          #+#    #+#             */
+/*   Updated: 2025/04/21 11:44:03 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memcpy(void *dest, const void *src,size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     size_t i;
-    char *d;
-    const char *s;
+    const char *src1;
+    const char *src2;
 
-    d = dest;
-    s = src;
     i = 0;
-    while (i < n)
+    src1 = s1;
+    src2 = s2;
+    if (n == 0)
+        return (0);
+    while ((i < n - 1) && (src1[i] == src2[i]))
     {
-        d[i] = s[i];
         i++;
     }
-    return (d);
+    return (src1[i] - src2[i]);
 }
-
 /*int	main(void)
 {
-	char src[] = "42 Porto";
-	char dest[20];
+	char src1[] = "42 Porto";
+	char src2[] = "42 Portoss";
 
-	ft_memcpy(dest, src, 9);
+	int ret = ft_memcmp(src1, src2, 9);
+	printf("ft_memcmp: %d\n", ret);
 
-	printf("Resultado: %s\n", dest);
+    ret = memcmp(src1, src2, 9);
+	printf("memcmp: %d\n", ret);
 	return (0);
 }*/
