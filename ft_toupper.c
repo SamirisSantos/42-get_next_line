@@ -21,7 +21,6 @@ int	ft_toupper(int c)
 	}
 	else
 		return (c);
-
 }
 /*
 int	main()
@@ -32,4 +31,3 @@ int	main()
 	printf("Minha: %c \n", ft_toupper(c));
 	printf("FUncao C: %c \n", toupper(c));
 }*/
-

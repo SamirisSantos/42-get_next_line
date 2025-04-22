@@ -6,25 +6,25 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:02:57 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/21 12:42:16 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:19:04 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    size_t  i;
-    char *src;
-    
-    i = 0;
-    src = s;
-    while(i < n)
-    {
-        src[i] = 0;
-        i++;
-    }
+	size_t	i;
+	char	*src;
+
+	i = 0;
+	src = s;
+	while (i < n)
+	{
+		src[i] = 0;
+		i++;
+	}
 }
 /*int main()
 {

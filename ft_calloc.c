@@ -6,30 +6,30 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:07:27 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/21 14:08:37 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:20:17 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    size_t i;
-    char *ptr;
-    
-    ptr = (char *)malloc(nmemb * size);
-    if (ptr == NULL)
-        return (NULL);
-    i = 0;
-    while (i < nmemb * size)
-    {
-        ptr[i] = 0;
-        i++;
-    }
-    return (ptr);
+	size_t	i;
+	char	*ptr;
+
+	ptr = (char *)malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	i = 0;
+	while (i < nmemb * size)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return (ptr);
 }
-int	main()
+/*int	main()
 {
 	int	*str; 
 	int	i;
@@ -50,4 +50,4 @@ int	main()
     }
 	free(str);
 	return (0);
-}
+}*/

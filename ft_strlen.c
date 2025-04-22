@@ -24,7 +24,6 @@ size_t	ft_strlen(char *c)
 	}
 	return (i);
 }
-
 /*int main()
 {
 	char src[] = "outro texto";

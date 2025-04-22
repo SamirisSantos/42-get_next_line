@@ -35,10 +35,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[len_dst + i] = src[i];
 		i++;
 	}
-	dst[len_dst + i] = '\0'; 
+	dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }
-int main()
+/*int main()
 {
 	char dest[] = "Hello ";
 	char src[] = "42Course";
@@ -47,4 +47,4 @@ int main()
 	r = ft_strlcat(dest, src, 0);
 	printf("string resultado: %s \n", dest);
 	printf("returno strlcat: %zu \n", r);
-}
+}*/

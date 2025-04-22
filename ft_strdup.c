@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:06:50 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/21 16:11:45 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:31:16 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,31 @@
 #include <string.h>
 #include <stdlib.h>
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    int i;
-    char *cpy;
+	int		i;
+	char	*cpy;
 
-    i = 0;
-    while (s[i] != '\0')
-    {
-        i++;
-    }
-    cpy =(char *)malloc((i + 1) * sizeof(char));
-    cpy[i] = '\0';
-    while (i >= 0)
-    {
-        cpy[i] = s[i];
-        i--;      
-    }
-    return(cpy);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	cpy = (char *)malloc((i + 1) * sizeof(char));
+	cpy[i] = '\0';
+	while (i >= 0)
+	{
+		cpy[i] = s[i];
+		i--;
+	}
+	return (cpy);
 }
-int main()
-{
-    const char *str = "42 Porto";
-    char *res;
-   
-    res = ft_strdup(str);                            
-    printf("Resultado: %s\n", res);
-    free(res);
-    return(0);
-}
+// int main()
+// {
+//     const char *str = "42 Porto";
+//     char *res;
+//     res = ft_strdup(str);                            
+//     printf("Resultado: %s\n", res);
+//     free(res);
+//     return(0);
+// }

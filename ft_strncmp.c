@@ -13,9 +13,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    size_t	i;
+	size_t	i;
 
 	i = 0;
 	if (n <= 0)
@@ -34,7 +34,6 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (s1[i] - s2[i]);
 }
-
 /*int main()
 {
     char    st1[] = "Pisciner 42";

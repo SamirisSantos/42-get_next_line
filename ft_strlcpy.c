@@ -15,11 +15,11 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t len;
-	size_t j;
-	
-	len = 0; 
-	j = 0; 
+	size_t	len;
+	size_t	j;
+
+	len = 0;
+	j = 0;
 	while (src[len] != '\0')
 	{
 		len++;
@@ -36,7 +36,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[j] = '\0';
 	return (len);
 }
-
 /*int main()
 {
 	char src[] = "Hello word";
