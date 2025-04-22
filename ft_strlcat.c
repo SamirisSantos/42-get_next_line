@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -20,16 +19,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	i = 0;
-	len_dst = 0;
-	len_src = 0;
-	while (dst[len_dst] != '\0')
-	{
-		len_dst++;
-	}
-	while (src[len_src] != '\0')
-	{
-		len_src++;
-	}
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen((char *)src);
+	if (size == 0)
+		return (len_src);
+	if (len_dst >= size)
+		return (size + len_src);
 	while ((src[i] != '\0') && ((len_dst + i + 1) < size))
 	{
 		dst[len_dst + i] = src[i];
@@ -38,13 +33,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }
-/*int main()
-{
-	char dest[] = "Hello ";
-	char src[] = "42Course";
-	size_t r;
-
-	r = ft_strlcat(dest, src, 0);
-	printf("string resultado: %s \n", dest);
-	printf("returno strlcat: %zu \n", r);
-}*/
+// int main()
+// {
+// 	char dest[15] = "a";
+// 	char src[] = "lorem ipsum dolor sit amet";
+// 	size_t r;
+// 	ft_memset(dest, 'r', 15);
+// 	r = ft_strlcat(dest, src, 5);
+// 	printf("string resultado: %s \n", dest);
+// 	printf("returno strlcat: %zu \n", r);
+// }

@@ -32,33 +32,29 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		return (0);
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }
-/*int main()
-{
-    char    st1[] = "Pisciner 42";
-    char    st2[] = "pisciner";
-	unsigned int n;
-	int	result;
-
-	n = 4;
-        result = ft_strncmp(st1,st2,n);
-        printf("Result My funcion 1:%d \n", result);
-	result = strncmp(st1,st2,n);
-        printf("Result C 1:%d \n", result);
-	
-        printf("--------------------- \n");
-
-	n = 8;
-	result = ft_strncmp(st1,st2,n);
-        printf("Result My funcion 2:%d \n", result);
-        result = strncmp(st1,st2,n);
-        printf("Result C 2:%d \n", result);
-
-	printf("--------------------- \n");
-
-	result = ft_strncmp(st1,st2, 9);
-        printf("Result My funcion 2:%d \n", result);
-        result = strncmp(st1,st2,9);
-        printf("Result C 2:%d \n", result);
-}*/
+// int main()
+// {
+//     char    st1[] = "test\200";
+//     char    st2[] = "test\0";
+// 	unsigned int n = 6;
+// 	int	result;
+// 	result = ft_strncmp(st1,st2,n);
+// 	n = 4;
+//  result = ft_strncmp(st1,st2,n);
+//          printf("Result My funcion 1:%d \n", result);
+// 	// result = strncmp(st1,st2,n);
+//  printf("Result C 1:%d \n", result);
+//  printf("--------------------- \n");
+// 	n = 8;
+// 	result = ft_strncmp(st1,st2,n);
+//  printf("Result My funcion 2:%d \n", result);
+//  result = strncmp(st1,st2,n);
+//   printf("Result C 2:%d \n", result);
+// 	printf("--------------------- \n");
+// 	result = ft_strncmp(st1,st2, 9);
+//  printf("Result My funcion 2:%d \n", result);
+//  result = strncmp(st1,st2,9);
+//  printf("Result C 2:%d \n", result);
+// }
