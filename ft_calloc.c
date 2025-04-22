@@ -15,5 +15,39 @@
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
+    size_t i;
+    char *ptr;
     
+    ptr = (char *)malloc(nmemb * size);
+    if (ptr == NULL)
+        return (NULL);
+    i = 0;
+    while (i < nmemb * size)
+    {
+        ptr[i] = 0;
+        i++;
+    }
+    return (ptr);
+}
+int	main()
+{
+	int	*str; 
+	int	i;
+    size_t    n;
+
+    n = 5;
+    str = (int *)ft_calloc(n, sizeof(int));
+    i = 0;
+	if (!str)
+	{
+		printf("Erro\n");
+		return (1);
+	}
+	while (i < n)
+    {
+        printf("str[%d] = %d\n", i, str[i]);
+        i++;
+    }
+	free(str);
+	return (0);
 }
