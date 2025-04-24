@@ -6,12 +6,11 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 16:24:36 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/22 16:55:33 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:37:24 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

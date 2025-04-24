@@ -6,12 +6,11 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 11:02:51 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/22 16:25:27 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:37:21 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

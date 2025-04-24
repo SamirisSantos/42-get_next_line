@@ -6,12 +6,11 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:07:27 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/22 16:20:17 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:36:50 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 13:59:00 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/23 15:27:27 by sade-ara         ###   ########.fr       */
+/*   Created: 2025/04/24 14:41:03 by sade-ara          #+#    #+#             */
+/*   Updated: 2025/04/24 14:41:08 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
 // 	char *str = "42 Porto e top";
 // 	char *ptr;
-
 // 	ptr = ft_substr(str, 15, 0);
 // 	printf("%s \n",ptr);
 // }

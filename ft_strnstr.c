@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -43,8 +42,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 //     const char *largestring = "Foo Bar Baz";
 //     const char *smallstring = "Bar";
 //     char *ptr;
-
-//     ptr = ft_strnstr(largestring, smallstring, 4);
+//     ptr = ft_strnstr(largestring, smallstring, 10);
 //     printf("Retorn: %s \n",ptr);
-
 // }
