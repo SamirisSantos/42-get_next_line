@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/26 16:35:57 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/27 17:39:20 by sade-ara         ###   ########.fr       */
+/*   Created: 2025/04/26 16:36:41 by sade-ara          #+#    #+#             */
+/*   Updated: 2025/04/27 17:23:47 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void ft_putnbr_fd(int n, int fd)
 {
-	int	i;
+	int		i;
+	size_t	nb;
+	char	str[12];
 
 	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	nb = n;
+	if(n == 0)
+		ft_putchar_fd('0', fd);
+	itoa(n, str, 10);
 }
-// int main()
-// {
-// 	char str[]= "Hello Piscine 42";
-// 	ft_putstr_fd(str, 1);
-// }
