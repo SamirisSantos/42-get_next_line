@@ -21,12 +21,11 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
-/*
-int	main()
-{
-	char c;
-	c = 's';
-	
-	printf("Minha: %c \n", ft_toupper(c));
-	printf("FUncao C: %c \n", toupper(c));
-}*/
+
+// int	main()
+// {
+// 	char c;
+// 	c = 's';
+// 	printf("Minha: %c \n", ft_toupper(c));
+// 	printf("FUncao C: %c \n", toupper(c));
+// }
