@@ -6,18 +6,18 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:35:39 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/27 17:29:33 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:49:02 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	write (fd, &c, 1);
 }
-int main()
-{ 
-	ft_putchar_fd('A', 1);
-	return (0);
-}
+// int main()
+// { 
+// 	ft_putchar_fd('A', 1);
+// 	return (0);
+// }

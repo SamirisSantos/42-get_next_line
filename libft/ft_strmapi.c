@@ -6,13 +6,13 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 15:38:11 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/27 15:57:04 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:44:09 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // char	ft_upfirst(unsigned int i, char c)
-// {// Function teste, convert first letter to uppercase and the rest to lowercase
+// {
 // 	if(i == 0 && c >= 'a' && c <= 'z')
 // 		return (c - 32);
 // 	else if (i != 0 && c >= 'A' && c <= 'Z')
@@ -24,7 +24,7 @@
 // 		}
 // 	return (c);
 // }
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*res;
 	int		i;
@@ -40,7 +40,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	res[i] = '\0';
 	return (res);
-}	
+}
 // int main()
 // {
 // 	char *s = "pORTO 42!";
