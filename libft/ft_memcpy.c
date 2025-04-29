@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 16:24:36 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/29 15:02:29 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:52:27 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		d[i] = s[i];
 		i++;
 	}
+	return (d);
 }
 /*int	main(void)
 {

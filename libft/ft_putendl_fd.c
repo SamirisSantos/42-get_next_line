@@ -6,16 +6,15 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:36:23 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/29 14:54:13 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:04:48 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s == NULL)
-		return (NULL);
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

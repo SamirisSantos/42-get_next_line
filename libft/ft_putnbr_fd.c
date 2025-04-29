@@ -6,32 +6,41 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:36:41 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/29 14:52:29 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:16:25 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <fcntl.h>
+#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
 	int		i;
-	size_t	nb;
+	long	nb;
 	char	str[12];
 
 	i = 0;
 	nb = n;
-	if (n == 0)
+	if (nb == 0)
 		ft_putchar_fd('0', fd);
-	str = itoa(n);
-	if (!str)
-		return (NULL);
-	while (str[i])
+	if (nb < 0)
 	{
-		ft_putchar_fd(str[i], fd);
+		ft_putchar_fd('-', fd);
+		nb = nb * (-1);
+	}
+	while (nb > 0)
+	{
+		str[i] = nb % 10 + '0';
+		nb = nb / 10;
 		i++;
 	}
-	free(str);
+	str[i] = '\0';
+	while (i > 0)
+	{
+		i--;
+		ft_putchar_fd(str[i], fd);
+	}
 }
 // int main()
 // {
@@ -44,7 +53,8 @@ void	ft_putnbr_fd(int n, int fd)
 // 	ft_putchar_fd('\n', fd);
 // 	ft_putnbr_fd(-5432, fd);
 // 	ft_putchar_fd('\n', fd);
-// 	ft_putnbr_fd(2147483647, fd); 
+// 	ft_putnbr_fd(2147483647, fd);
+// 	ft_putchar_fd('\n', fd); 
 // 	return (0);
 // 	/*
 // 	// Testando a função com um arquivo

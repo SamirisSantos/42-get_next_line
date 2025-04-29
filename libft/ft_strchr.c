@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char) c)
 		{
 			return ((char *)&s[i]);
 		}
@@ -32,11 +32,9 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
-/*int main()
-{
-    char str[] = "Hello World outra coisa";
-    char *s = ft_strchr(str, 'd');
-    
-    printf("%s", s);
-
-}*/
+// int main()
+// {
+//     char str[] = "42 Porto";
+//     char *s = ft_strchr(str, 'P');
+//     printf("%s \n", s);
+// }

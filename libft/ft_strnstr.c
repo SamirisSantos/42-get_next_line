@@ -19,19 +19,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (little[i] == '\0')
+	if (little[0] == '\0')
+		return ((char *) big);
+	while (big[i] != '\0' && i < len)
 	{
-		return ((char *)&big[i]);
-	}
-	while ((big[i] != '\0') && (i < len - 1))
-	{
-		while (little[j] != '\0' && little[j] == big[i + j])
+		j = 0;
+		while (big[i + j] == little[j] && big[i + j] && (i + j) < len)
 		{
 			j++;
-		}
-		if (little[j] == '\0')
-		{
-			return ((char *)&big[i]);
+			if (little[j] == '\0')
+				return ((char *) &big[i]);
 		}
 		i++;
 	}
@@ -39,9 +36,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 }
 // int main()
 // {
-//     const char *largestring = "Foo Bar Baz";
-//     const char *smallstring = "Bar";
+//     const char *large = "lorem ipsum dolor sit amet";
+//     const char *small = "ipsumm";
 //     char *ptr;
-//     ptr = ft_strnstr(largestring, smallstring, 10);
+//     ptr = ft_strnstr(large, small, 30);
 //     printf("Retorn: %s \n",ptr);
 // }
