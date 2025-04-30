@@ -26,15 +26,12 @@ void	*ft_memset(char *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
-int main()
+/*int main()
 {
     char dest[50];
     char ch = 'b';
     ft_memset(dest, ch, 20);
-
     printf("After ft_memset():  %s \n", dest);
-    
     memset(dest, ch, 20);
     printf("After memset():  %s \n", dest);
 }*/
