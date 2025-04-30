@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 16:24:36 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/29 15:52:27 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:52:27 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = dest;
 	s = src;
 	i = 0;
+	if (!d && !s)
+		return (NULL);
 	while (i < n)
 	{
 		d[i] = s[i];

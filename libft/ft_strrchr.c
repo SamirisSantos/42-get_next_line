@@ -6,9 +6,10 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:57:28 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/15 16:06:15 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:06:15 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
@@ -23,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
 			return ((char *)&s[i]);
 		}

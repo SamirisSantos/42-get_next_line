@@ -6,13 +6,13 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:59:03 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/24 17:22:25 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:13:58 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countnumber(int i)
+int	countnumber(long i)
 {
 	int	count;
 
@@ -39,12 +39,12 @@ char	*ft_swapstr(char *c)
 	size_t	j;
 
 	i = 0;
-	if (c[i] == '0')
+	if (c[i] == '0' && c[1] == '\0')
 		return (c);
 	if (c[i] == '-')
 		i++;
-	j = (ft_strlen(c) - 1);
-	while (j >= i)
+	j = ft_strlen(c) - 1;
+	while (j > i) 
 	{
 		temp = c[i];
 		c[i] = c[j];
@@ -61,8 +61,8 @@ char	*ft_itoa(int n)
 	int		i;
 	long	num;
 
-	num = n;
-	s = (char *)malloc(sizeof(char *) * (countnumber(n) + 1));
+	num = (long)n;
+	s = (char *)malloc(sizeof(char) * (countnumber(n) + 1));
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -71,7 +71,7 @@ char	*ft_itoa(int n)
 	if (num < 0)
 	{
 		s[i++] = '-';
-		num = num * (-1);
+		num = -num;
 	}
 	while (num > 0)
 	{
@@ -82,11 +82,10 @@ char	*ft_itoa(int n)
 	ft_swapstr(s);
 	return (s);
 }
-int main()
-{
-	char	*converted_int;
-	
-	converted_int = ft_itoa(-2147483648);
-	printf("int to string: %s\n", converted_int);
-	free(converted_int);
-}
+// int main()
+// {
+// 	char	*converted_int;
+// 	converted_int = ft_itoa(9);
+// 	printf("int to string: %s\n", converted_int);
+// 	free(converted_int);
+// }

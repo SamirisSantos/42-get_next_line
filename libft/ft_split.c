@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:09:43 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/24 14:58:23 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:58:23 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	**ft_split(char const *s, char c)
 	int		k;
 
 	res = (char **)malloc(sizeof(char *) * (ft_countwords(s, c) + 1));
-	if (!s && !res)
+	if (!s || !res)
 		return (NULL);
 	i = 0;
 	j = 0;
