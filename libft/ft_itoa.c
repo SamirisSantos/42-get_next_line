@@ -17,6 +17,8 @@ int	countnumber(int i)
 	int	count;
 
 	count = 0;
+	if (i == 0)
+		return (1);
 	if (i < 0)
 	{
 		i = i * (-1);
@@ -37,9 +39,11 @@ char	*ft_swapstr(char *c)
 	size_t	j;
 
 	i = 0;
+	if (c[i] == '0')
+		return (c);
 	if (c[i] == '-')
 		i++;
-	j = (strlen(c) - 1);
+	j = (ft_strlen(c) - 1);
 	while (j >= i)
 	{
 		temp = c[i];
@@ -55,33 +59,34 @@ char	*ft_itoa(int n)
 {
 	char	*s;
 	int		i;
+	long	num;
 
+	num = n;
 	s = (char *)malloc(sizeof(char *) * (countnumber(n) + 1));
 	if (!s)
 		return (NULL);
 	i = 0;
-	if (n == 0)
-		s[i] = '0';
-	if (n < 0)
+	if (num == 0)
+		s[i++] = '0';
+	if (num < 0)
 	{
-		s[i] = '-';
-		n = n * (-1);
-		i ++;
+		s[i++] = '-';
+		num = num * (-1);
 	}
-	while (n > 0)
+	while (num > 0)
 	{
-		s[i] = n % 10 + '0';
-		n = n / 10;
-		i ++;
+		s[i++] = num % 10 + '0';
+		num = num / 10;
 	}
 	s[i] = '\0';
 	ft_swapstr(s);
 	return (s);
 }
-// int main()
-// {
-// 	int	n = -2025;
-// 	char	*converted_int;
-// 	converted_int = ft_itoa(n);
-// 	printf("int to string: %s\n", converted_int);
-// }
+int main()
+{
+	char	*converted_int;
+	
+	converted_int = ft_itoa(-2147483648);
+	printf("int to string: %s\n", converted_int);
+	free(converted_int);
+}
