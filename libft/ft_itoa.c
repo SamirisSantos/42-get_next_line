@@ -6,13 +6,13 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:59:03 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/01 11:15:59 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:18:46 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countnumber(long i)
+static int	countnumber(long i)
 {
 	int	count;
 
@@ -32,7 +32,7 @@ int	countnumber(long i)
 	return (count);
 }
 
-char	*ft_swapstr(char *c)
+static char	*ft_swapstr(char *c)
 {
 	char	temp;
 	size_t	i;

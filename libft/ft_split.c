@@ -6,13 +6,13 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:09:43 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/30 14:58:23 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:17:35 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countwords(char const *s, char c)
+static int	ft_countwords(char const *s, char c)
 {
 	int	count;
 	int	in_word;
