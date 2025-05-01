@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:09:43 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/01 14:17:35 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/01 16:09:16 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,19 @@ static int	ft_countwords(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static void	free_all(char **res, int j)
 {
-	char	**res;
+	while (--j >= 0)
+		free(res[j]);
+	free(res);
+}
+
+static int	split_insert_word(char **res, char const *s, char c)
+{
 	int		i;
 	int		j;
 	int		k;
 
-	res = (char **)malloc(sizeof(char *) * (ft_countwords(s, c) + 1));
-	if (!s || !res)
-		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
@@ -54,31 +57,50 @@ char	**ft_split(char const *s, char c)
 			k = i;
 			while (s[k] && s[k] != c)
 				k++;
-			res[j++] = ft_substr(s, i, k - i);
-			i = k - 1;
+			res[j] = ft_substr(s, i, k - i);
+			if (!res[j])
+				return (free_all(res, j), 0);
+			j ++;
+			i = k;
+			continue ;
 		}
 		i++;
 	}
 	res[j] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+
+	if (!s)
+		return (NULL);
+	res = (char **)malloc(sizeof(char *) * (ft_countwords(s, c) + 1));
+	if (!res)
+		return (NULL);
+	if (!split_insert_word(res, s, c))
+		return (NULL);
 	return (res);
 }
-// int main(void)
-// {
-// 	char *str = "  Hi, 42 Porto  ";
-// 	char d = ' ';
-// 	char **res = ft_split(str, d);
-// 	int i = 0;
-// 	while (res[i] != NULL)
-// 	{
-// 		printf("Palavra %d: \"%s\"\n", i, res[i]);
-// 		i++;
-// 	}
-// 	int j = 0;
-// 	while (res[j])
-// 	{
-// 		free(res[j]);
-// 		j++;
-// 	}
-// 	free(res);
-// 	return 0;
-// }
+/*int main(void)
+{
+	char	**res;
+	int		i;
+
+	i = 0;
+	res = ft_split("lorem ipsum dolor sit amet", 'i');
+	if (!res)
+	{
+		printf("Returned NULL\n");
+		return (1);
+	}
+	while (res[i])
+	{
+		printf("res[%d] = %s\n", i, res[i]);
+		free(res[i]);
+		i++;
+	}
+	free(res);
+	return (0);
+}*/
