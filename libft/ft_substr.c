@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:41:03 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/01 12:23:01 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/01 13:12:53 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,13 @@ int main()
 	test(NULL, 0, 5);
 	return (0);
 }*/
+/* 
+Error in test 5: ft_substr("hola", 0, 18446744073709551615): not enough memory allocated, needed: 5, 
+reserved: 0
+Error in test 5: ft_substr("hola", 0, 18446744073709551615): 
+Memory leak: 0x56390a6d08b0 - 4096 bytes
+You failed to free the memory allocated at:
+Error in test 6: ft_substr("hola", 4294967295, 18446744073709551615): not enough memory allocated, 
+needed: 1, reserved: 0
+
+*/
