@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:59:03 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/30 16:13:58 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/01 11:15:59 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_swapstr(char *c)
 	if (c[i] == '-')
 		i++;
 	j = ft_strlen(c) - 1;
-	while (j > i) 
+	while (j > i)
 	{
 		temp = c[i];
 		c[i] = c[j];

@@ -6,12 +6,11 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:41:03 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/04/30 16:28:20 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/01 12:23:01 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -21,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!s || !substr)
 		return (NULL);
-	if (start >= strlen(s))
+	if (start >= ft_strlen(s))
 	{
 		substr[0] = '\0';
 		return (substr);
@@ -35,12 +34,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-// int main()
-// {
-// 	//char *str = "42 Porto e top";
-// 	char *ptr;
-// 	ptr = ft_substr("tripouille", 0, 42000);
-// 	printf("%s \n",ptr);
-// 	free(ptr);
-// 	return (0);
-// }
+/*void test(char *s, unsigned int start, size_t len)
+{
+	char *res;
+	res = ft_substr(s, start, len);
+	printf("test:%s \n", res);
+	free(res);
+}
+int main()
+{
+	test("Hello word", 6, 5);
+	test("Hello", 10, 3);
+	test("Hello", 2, 10);
+	test("Hello", 2, 0);
+	test("Hello", 5, 1);
+	test("Hello", 0, 5);
+	test("", 0, 5);
+	test(NULL, 0, 5);
+	return (0);
+}*/
