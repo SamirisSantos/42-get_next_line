@@ -6,14 +6,14 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:36:23 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/02 13:16:29 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/02 13:37:32 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>  // Para open()
 #include <unistd.h> // Para read() e close()
-#include <stdio.h>  // Para printf()
-#include <stdlib.h> // Para malloc()
+#include <stdio.h>  
+#include <stdlib.h> 
 
 void	ft_putchar_fd(char c, int fd)
 {

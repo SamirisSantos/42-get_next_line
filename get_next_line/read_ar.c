@@ -1,7 +1,7 @@
 #include <fcntl.h>  // Para open()
 #include <unistd.h> // Para read() e close()
-#include <stdio.h>  // Para printf()
-#include <stdlib.h> // Para malloc()
+#include <stdio.h>  
+#include <stdlib.h> 
 
 #define BUFFER_SIZE 128 // Tamanho do buffer
 
