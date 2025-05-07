@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdint.h> // para uintptr_t
+# include <stdint.h>
 
 int		ft_printf(const char *format, ...);
 

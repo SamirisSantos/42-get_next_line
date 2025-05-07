@@ -19,6 +19,12 @@
 # include <string.h>
 # include <unistd.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_isalnum(int c);
@@ -56,5 +62,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 size_t	ft_strlen(const char *c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+
+// Bonus (list manipulations)
 
 #endif
