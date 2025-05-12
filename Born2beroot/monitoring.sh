@@ -6,7 +6,7 @@
 #    By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 15:49:19 by sade-ara          #+#    #+#              #
-#    Updated: 2025/05/09 14:40:31 by sade-ara         ###   ########.fr        #
+#    Updated: 2025/05/12 12:58:07 by sade-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,7 @@ last_boot=$(who -b | awk '{print $3 " " $4}')
 lvm_use=$(lsblk | grep -q "lvm" && echo "yes" || echo "no")
 tcp_conn=$(grep TCP /proc/net/sockstat | awk '{print $3}')
 user_log=$(who | wc -l)
-#Configurar na VM para os hostname link show journalctl
-ip_addr=$(hostname -I | awk '{print $1}')
+ip_addr=$(ip -4 address | awk '{print $2}'| sed -n '2p' | cut -d/ -f1)
 mac_addr=$(ip link show | awk '/ether/ {print $2}' | head -n 1)
 sudo_cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l 2>/dev/null || echo "N/A")
 
