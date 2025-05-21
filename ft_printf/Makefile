@@ -13,8 +13,8 @@
 
 NAME = libftprintf.a
 
-SRC = src/ft_printf.c src/ft_formats.c \
-	   utils/ft_putchar.c \
+SRC = src/ft_printf.c \
+	   utils/ft_putchar.c utils/\
 
 OBJ = $(SRC:.c=.o)
 CC = cc

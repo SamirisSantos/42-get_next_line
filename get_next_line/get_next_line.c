@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 11:37:16 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/02 13:16:25 by sade-ara         ###   ########.fr       */
+/*   Created: 2025/05/21 21:06:50 by sade-ara          #+#    #+#             */
+/*   Updated: 2025/05/21 21:06:50 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {

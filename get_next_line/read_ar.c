@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_ar.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/21 20:57:44 by sade-ara          #+#    #+#             */
+/*   Updated: 2025/05/21 20:57:44 by sade-ara         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fcntl.h>  // Para open()
 #include <unistd.h> // Para read() e close()
 #include <stdio.h>  
 #include <stdlib.h> 
 
-#define BUFFER_SIZE 128 // Tamanho do buffer
+#define BUFFER_SIZE 42 // Tamanho do buffer
 
 char *read_fd(const char *caminho_arquivo) {
     int fd = open(caminho_arquivo, O_RDONLY); // Abrir arquivo para leitura

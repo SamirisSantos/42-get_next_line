@@ -29,7 +29,7 @@ int	ft_puthex(unsigned int n, const char format)
 	if (n >= 16)
 		count += ft_puthex(n / 16, format);
 	c = hexbase[n % 16];
-	count += write(1, &c, 1);
+	count += ft_putchar(1, &c, 1);
 	return (count);
 }
 /*int	main()
