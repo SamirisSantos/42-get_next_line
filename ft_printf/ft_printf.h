@@ -17,9 +17,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <stdio.h>
+# include <string.h>
 
-int		ft_printf(const char *format, ...);
-
-int		ft_putchar(char c);
+int	ft_printf(const char *format, ...);
+int	ft_putchar(char c)
+int	ft_putstr(char *str);
+int	ft_putnbr(int n);
+int	ft_putuint(unsigned int n);
+int	ft_puthex(unsigned int n, char format);
+int	ft_putpointer(void *ptr);
 
 #endif

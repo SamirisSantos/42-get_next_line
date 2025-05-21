@@ -13,7 +13,7 @@
 #include "../ft_printf.h"
 
 //%s Prints a string 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
@@ -23,9 +23,19 @@ void	ft_putstr(char *s)
 		ft_putchar(s[i]);
 		i++;
 	}
+	return (i);
 }
-// int main()
-// {
-// 	char str[]= "Hello Piscine 42";
-// 	ft_putstr(str);
-// }
+/*int main()
+{
+	char *s = "Hello 42 Porto!";
+	int	Original;
+	int	myfuntion;
+
+	Original = printf("%s", s);
+	printf("\n");
+	myfuntion = ft_putstr(s);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	return (0);
+}*/

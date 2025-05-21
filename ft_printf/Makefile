@@ -6,11 +6,10 @@
 #    By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 19:31:06 by sade-ara          #+#    #+#              #
-#    Updated: 2025/04/30 19:31:06 by sade-ara         ###   ########.fr        #
+#    Updated: 2025/05/21 13:12:56 by sade-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT = libft/libft.a
 
 NAME = libftprintf.a
 

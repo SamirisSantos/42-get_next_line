@@ -6,45 +6,81 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:55:17 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/20 15:23:41 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/21 19:59:54 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-//%d Prints a decimal (base 10) number.
-void	ft_putnbr(int n)
+//%d Prints a decimal (base 10) number AND %i Prints an integer in base 10
+int	ft_putnbr(int n)
 {
 	int		i;
 	long	nb;
-	char	str[12];
+	int		count;
 
 	i = 0;
+	count = 0;
 	nb = n;
 	if (nb < 0)
 	{
-		ft_putchar('-');
+		count += ft_putchar('-');
 		nb = nb * (-1);
 	}
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
+		count += ft_putnbr(nb / 10);
 	}
-	ft_putchar(nb % 10 + '0');
+	count += ft_putchar(nb % 10 + '0');
+	return (count);
 }
+/*int main()
+{
+	int	Original;
+	int	myfuntion;
+	int	n = -2147483648;
+	int	n2 = 2147483647;
+	int	n3 = 0;
 
-// int main(){
-// 	ft_putnbr(-2147483648); 
-// 	ft_putchar('\n');
-// 	ft_putnbr(5432);
-// 	ft_putchar('\n');
-// 	ft_putnbr(0);
-// 	ft_putchar('\n');
-// 	ft_putnbr(-5432);
-// 	ft_putchar('\n');
-// 	ft_putnbr(2147483647);
-// 	ft_putchar('\n'); 
-// 	return (0);
-// }
+	// decimal
+	printf("Decimal\n");
+	Original = printf("%d", n);
+	printf("\n");
+	myfuntion = ft_putnbr(n);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
 
-	
+	Original = printf("%d", n2);
+	printf("\n");
+	myfuntion = ft_putnbr(n2);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	Original = printf("%d", n3);
+	printf("\n");
+	myfuntion = ft_putnbr(n3);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	// integer
+	printf("\nInteger\n");
+	Original = printf("%i", n);
+	printf("\n");
+	myfuntion = ft_putnbr(n);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	Original = printf("%i", n2);
+	printf("\n");
+	myfuntion = ft_putnbr(n2);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	Original = printf("%i", n3);
+	printf("\n");
+	myfuntion = ft_putnbr(n3);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	return (0);
+}*/
