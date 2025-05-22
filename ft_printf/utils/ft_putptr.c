@@ -28,7 +28,7 @@ static int	ft_puthex_long(unsigned long long int n, const char format)
 }
 
 //%p Prints a pointer address
-int	ft_putpointer(void *ptr)
+int	ft_putptr(void *ptr)
 {
 	int		count;
 	char	*hex;
