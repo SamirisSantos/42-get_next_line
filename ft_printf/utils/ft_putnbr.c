@@ -15,11 +15,9 @@
 //%d Prints a decimal (base 10) number AND %i Prints an integer in base 10
 int	ft_putnbr(int n)
 {
-	int		i;
 	long	nb;
 	int		count;
 
-	i = 0;
 	count = 0;
 	nb = n;
 	if (nb < 0)

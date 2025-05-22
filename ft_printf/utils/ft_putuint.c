@@ -27,7 +27,7 @@ int	ft_putuint(unsigned int n)
 }
 /*int main()
 {
-	unsigned int n = 4294967295;
+	unsigned int	n = 4294967295;
 	unsigned int	Original;
 	unsigned int	myfuntion;
 

@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:48:33 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/16 12:48:38 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/22 16:24:04 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_puthex(unsigned int n, const char format)
 	if (n >= 16)
 		count += ft_puthex(n / 16, format);
 	c = hexbase[n % 16];
-	count += ft_putchar(1, &c, 1);
+	count += ft_putchar(c);
 	return (count);
 }
 /*int	main()

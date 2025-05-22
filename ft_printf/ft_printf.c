@@ -12,15 +12,15 @@
 
 #include "ft_printf.h"
 
-static int	ft_formats(char format)
+static int	ft_formats(char format, va_list ap)
 {
-	
+
 	if (format == 'c')
-		return(ft_putchar(va_arg(ap, int)));
+		return(ft_putchar(va_arg(ap, char)));
 	else if (format == 's')
 		return(ft_putstr(va_arg(ap, char *)));
 	else if (format == 'p')
-		return(ft_putpointer(va_arg(ap, void *)));
+		return(ft_putptr(va_arg(ap, void *)));
 	else if (format == 'd' || format == 'i')
 		return(ft_putnbr(va_arg(ap, int)));
 	else if (format == 'u')
@@ -43,10 +43,77 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			count += ft_formats(*format);
+			count += ft_formats(*format, ap);
 		}
 		else
 			count += ft_putchar(*format);
 		format++;
 	}
-}	
+	return (count);
+}
+int main()
+{
+	char 			c;
+	unsigned int	n;
+	int				nbr;
+	int				*ptr;
+	unsigned int	Original;
+	unsigned int	myfuntion;
+
+	//%c Prints a single character
+	c = 'a';
+	Original = printf("Original char: %c\n", c);
+	myfuntion = ft_printf("My print char: %c\n",c);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+	printf("-----------------------------------------");
+
+	//%x or %X Prints an  hexadecimal (base 16) number in lowercase or uppercase
+	n = 305441741; // 1234abcd or 1234ABCD
+	Original = printf("Original hexa: %x\n", n);
+	myfuntion = ft_printf("My function hexa: %x\n",n);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	Original = printf("Original HEXA: %X\n", n);
+	myfuntion = ft_printf("My function HEXA: %X\n",n);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+	printf("-----------------------------------------");
+
+	//%d Prints a decimal (base 10) number AND %i Prints an integer in base 10
+	nbr = -2147483648;
+	Original = printf("Original dec/int: %i\n", nbr);
+	myfuntion = ft_printf("My function dec/int: %i\n",nbr);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	nbr = 2147483648;
+	Original = printf("Original dec/int: %d\n", nbr);
+	myfuntion = ft_printf("My function dec/int: %d\n",nbr);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+	printf("-----------------------------------------");
+
+	//%p Prints a pointer address
+	ptr = NULL;
+	Original = printf("Original dec/int: %p\n", ptr);
+	myfuntion = ft_printf("My function dec/int: %p\n",ptr);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+
+	ptr = &n;
+	Original = printf("Original dec/int: %p\n", ptr);
+	myfuntion = ft_printf("My function dec/int: %p\n",ptr);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+	printf("-----------------------------------------");
+
+	//%u Prints an unsigned decimal (base 10) number
+	n = 4294967295;
+	Original = printf("Original: %u\n", n);
+	printf("\n");
+	myfuntion = ft_printf("My function: %u\n",n);
+	printf("\nReturn values - Original: %d", Original);
+	printf(", Myfuntion: %d\n", myfuntion);
+}
