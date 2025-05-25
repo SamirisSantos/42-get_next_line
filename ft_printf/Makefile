@@ -14,20 +14,26 @@
 NAME = libftprintf.a
 
 SRC = ft_printf.c \
-	   utils/ft_putchar.c utils/ft_puthex.c \
-	   utils/ft_putnbr.c utils/ft_putptr.c \
-	   utils/ft_putstr.c utils/ft_putuint.c
+	utils/ft_putchar.c \
+	utils/ft_puthex.c \
+	utils/ft_putnbr.c \
+	utils/ft_putptr.c \
+	utils/ft_putstr.c \
+	utils/ft_putuint.c
 
 OBJ = $(SRC:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rc
+AR = ar rcs
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)
