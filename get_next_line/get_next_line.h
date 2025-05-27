@@ -20,7 +20,7 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
-#endif
+# endif
 
 char	*get_line(char *str);
 char	*get_rest(char *str);
