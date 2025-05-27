@@ -65,33 +65,69 @@ char *ft_strjoin(char *s1, char *s2)
 	return (strjoin);
 }
 
-int ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char) c)
-		{
 			return ((char *)&s[i]);
-		}
-		else
-			i++;
+		i++;
 	}
 	if ((char)c == '\0')
 	{
 		return ((char *)&s[i]);
 	}
-	return (0);
-
+	return (NULL);
 }
 
 char *get_line(char *str)
 {
+	int		i;
+	char	*line;
+
+	if (!str || !str[0])
+		return (NULL);
+
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	if (str[i] == '\n')
+		i++;
+
+	line = (char *)malloc(sizeof(char) * (i + 1));
+	if (!line)
+		return (NULL);
+	ft_memmove(line, str, i);
+	line[i] = '\0';
+	return (line);
 
 }
 char *get_rest(char *str)
 {
+	int		i;
+	int		len;
+	char	*rest;
 
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	if (!str[i]) // não tem \n, não há resto
+	{
+		free(str);
+		return (NULL);
+	}
+	i++;
+	len = ft_strlen(str + i);
+	rest = (char *)malloc(sizeof(char) * (len + 1));
+	if (!rest)
+		return (NULL);
+	ft_memmove(rest, str + i, len);
+	rest[len] = '\0';
+	free(str);
+	return (rest);
 }

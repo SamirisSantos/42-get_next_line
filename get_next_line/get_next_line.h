@@ -26,12 +26,10 @@ char	*get_line(char *str);
 char	*get_rest(char *str);
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
-
-int		ft_strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
 
 size_t	ft_strlen(const char *c);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
-
 
 #endif

@@ -15,18 +15,22 @@
 char	*get_next_line(int fd)
 {
 	static char	*rest;
-	char		buffer[BUFFER_SIZE +1];
-	int			read_bytes;
+	char		buffer[BUFFER_SIZE + 1];
 	char		*line;
+	int			read_bytes;
 
-	read_bytes = 1;
-	if (fd == -1 || BUFFER_SIZE < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	while (read_bytes > 0 && find_strchr(rest, '\n'))
+	read_bytes = 1;
+	while (read_bytes > 0 && !ft_strchr(rest, '\n'))
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
 		if (read_bytes == -1)
+		{
+			free(rest);
+			rest = NULL;
 			return (NULL);
+		}
 		buffer[read_bytes] = '\0';
 		rest = ft_strjoin(rest, buffer);
 	}
