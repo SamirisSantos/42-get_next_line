@@ -75,3 +75,6 @@ int main()
 - open() - manual [Linux](https://man7.org/linux/man-pages/man2/open.2.html)
 - Ferramentas para detectar leaks: **valgrind**
 
+---
+👩‍💻 Autora
+Samiris Santos — [LinkedIn](https://www.linkedin.com/in/samiris-santos/)
