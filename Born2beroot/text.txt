@@ -1,4 +1,0 @@
-
-
-#Network: IP $ip_addr ($mac_addr)
-#Sudo : $sudo_cmds cmd
