@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    get_next_line_utils.c                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 11:47:01 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/28 14:32:27 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/28 11:38:42 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	len_s2;
 	char	*strjoin;
 
+	len_s1 = 0;
 	if (s1)
 		len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);

@@ -6,7 +6,7 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 11:46:40 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/26 11:46:40 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:12:36 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@
 #  define BUFFER_SIZE 42
 # endif
 
-char	*get_line(char *str);
+char	*read_line(char *str);
 char	*get_rest(char *str);
 char	*get_next_line(int fd);
+char	*read_bytes(int fd, char *rest);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
 

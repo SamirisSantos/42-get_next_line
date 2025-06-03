@@ -6,16 +6,16 @@
 /*   By: sade-ara <sade-ara@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 11:46:52 by sade-ara          #+#    #+#             */
-/*   Updated: 2025/05/28 16:59:44 by sade-ara         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:01:47 by sade-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_line(char *str)
+char	*read_line(char *str)
 {
-	size_t	i;
 	char	*line;
+	int		i;
 
 	i = 0;
 	if (!str || !str[0])
@@ -34,7 +34,7 @@ char	*get_line(char *str)
 
 char	*get_rest(char *str)
 {
-	size_t	i;
+	int		i;
 	int		len;
 	char	*rest;
 
@@ -57,13 +57,14 @@ char	*get_rest(char *str)
 	return (rest);
 }
 
-char	*get_next_line(int fd)
+char	*read_bytes(int fd, char *rest)
 {
-	static char	*rest;
-	char		buffer[BUFFER_SIZE + 1];
-	char		*line;
+	static char	*buffer;
 	int			read_bytes;
 
+	buffer = malloc(sizeof(char) * (BUFFER_SIZE +1));
+	if (!buffer)
+		return (NULL);
 	read_bytes = 1;
 	while (read_bytes > 0 && !ft_strchr(rest, '\n'))
 	{
@@ -71,22 +72,34 @@ char	*get_next_line(int fd)
 		if (read_bytes == -1)
 		{
 			free(rest);
-			rest = NULL;
+			free(buffer);
 			return (NULL);
 		}
 		buffer[read_bytes] = '\0';
 		rest = ft_strjoin(rest, buffer);
 	}
+	free(buffer);
+	return (rest);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*rest;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	rest = read_bytes(fd, rest);
 	if (!rest)
 		return (NULL);
-	line = get_line(rest);
+	line = read_line(rest);
 	rest = get_rest(rest);
 	return (line);
 }
 // int main()
 // {
 // 		int	fd;
-// 		fd = open("test.txt", O_RDONLY);
+// 		fd = open("samiris.txt", O_RDONLY);
 // 	if (fd < 0)
 // 	{
 // 		perror("Error opening file");
