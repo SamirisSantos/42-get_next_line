@@ -1,7 +1,9 @@
 # 📖 get_next_line
-
-Implementar da função get_next_line
-
+![C Language](https://img.shields.io/badge/language-C-blue.svg)
+![Status](https://img.shields.io/badge/status-finished-brightgreen)
+![42 100/100](https://img.shields.io/badge/42-100%2F100-gree?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+-
 **O que é get_next_line?**
  - get_next_line é uma função em C que permite ler um ficheiro linha por linha, a cada chamada. Ou seja, cada vez que invocas get_next_line(fd), ela devolve a próxima linha do ficheiro indicado pelo descritor fd.
 
